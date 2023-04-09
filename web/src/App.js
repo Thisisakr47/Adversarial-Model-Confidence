@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar title = "Vizualizer"/>
-      <Panel path = "Lasan"/>
+      <Panel path = 'public\logo192.png'/>
     </>
   );
 }
