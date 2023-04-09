@@ -1,10 +1,12 @@
-// import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Panel from './components/Panel';
 
 function App() {
   return (
     <>
-      <h1>Shit !!</h1>
+      <Navbar title = "Vizualizer"/>
+      <Panel path = "Lasan"/>
     </>
   );
 }
