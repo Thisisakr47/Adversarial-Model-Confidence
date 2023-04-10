@@ -1,12 +1,10 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Panel from './components/Panel';
 
 function App() {
   return (
     <>
-      <Navbar title = "Vizualizer"/>
-      <Panel path = 'public\logo192.png'/>
+      <Navbar title = "Vizualizer" d1="MNIST" d2="STL-10" a1="L-BFGS" a2="FGSM" a3="State-of-art" dp1="10" dp2="20" dp3="30"/>
     </>
   );
 }

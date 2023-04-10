@@ -1,16 +1,26 @@
 import React from 'react'
 
+function importAll(r) {
+	let images = {};
+  r.keys().forEach((item, index) => { images[item.replace('./', '')] = r(item); });
+	return images
+}
+
+
 export default function GridImages(props) {
+  const images = importAll(require.context(`../images/MNIST/FGSM/10/`, false, /\.(png|jpe?g|svg)$/));
+  // console.log(images)
+  // console.log(props.l1)
   return (
-    <div class="row">
-        <div class="col">
-            <img src={props.l1} alt="MNIST" height="200" />
+    <div className="row">
+        <div className="col">
+            <img src={props.l1+"/"+props.index} alt="MNIST" height="80"/>
         </div>
-        <div class="col">
-            <img src={props.l2} alt="MNIST" height="200" />
+        <div className="col">
+            <img src={props.l2+"/"+props.index} alt="MNIST" height="80"/>
         </div>
-        <div class="col">
-            <img src={props.l3} alt="MNIST" height="200" />
+        <div className="col">
+            <img src={props.l3+"/"+props.index} alt="MNIST" height="80"/>
         </div>
     </div>
   )
