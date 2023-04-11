@@ -15,17 +15,26 @@ export default function Navbar(props) {
 
     const handleDropout = (event, param) => { 
         updateThird(param);
+        updatedropoutPath(`/${first}/${param}/`)
         updateDropout(`${param}%`);
+    }
+
+    const updatePath = (event, param) => { 
+        updateFourth(`${param}`);
+        updaterealPath(`/${first}/Left/${param}`);
     }
 
     const [first, updateFirst] = useState(props.d1);
     const [second, updateSecond] = useState(props.a1);
     const [third, updateThird] = useState(props.dp1);
+    const [fourth, updateFourth] = useState('0.png');
     const [Dataset, updateDataset] = useState('DataSet');
     const [Attacktype, updateAttacktype] = useState('Attack Type');
     const [Dropout, updateDropout] = useState('Dropout');
+    const [dropoutPath, updatedropoutPath] = useState('/MNIST/20/');
+    const [realPath, updaterealPath] = useState('/MNIST/Left/0.png');
 
-    var path = `/${first}/${second}/${third}/`
+    var path = `/${first}/${second}/${third}/${fourth}`
 
   return (
     <div>
@@ -66,14 +75,14 @@ export default function Navbar(props) {
                         <li><a className="dropdown-item" href="#" onClick={event => handleDropout(event, props.dp3)}>{props.dp3}%</a></li>
                     </ul>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                     <a className="nav-link" href="/about">About Us</a>
-                    </li>
+                    </li> */}
                 </ul>
                 </div>
             </div>
         </nav>
-        <Panel path = {path}/>
+        <Panel path={path} dropoutPath={dropoutPath} realPath={realPath} update={updatePath}/>
     </div>
   )
 }
