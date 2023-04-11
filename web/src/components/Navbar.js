@@ -3,15 +3,27 @@ import Panel from './Panel';
 
 export default function Navbar(props) {
 
-    const handleDataset = (event, param) => { updateFirst(param) }
+    const handleDataset = (event, param) => { 
+        updateFirst(param);
+        updateDataset(param);
+    }
 
-    const handleAttacktype = (event, param) => { updateSecond(param) }
+    const handleAttacktype = (event, param) => { 
+        updateSecond(param);
+        updateAttacktype(param);
+    }
 
-    const handleDropout = (event, param) => { updateThird(param) }
+    const handleDropout = (event, param) => { 
+        updateThird(param);
+        updateDropout(`${param}%`);
+    }
 
     const [first, updateFirst] = useState(props.d1);
     const [second, updateSecond] = useState(props.a1);
     const [third, updateThird] = useState(props.dp1);
+    const [Dataset, updateDataset] = useState('DataSet');
+    const [Attacktype, updateAttacktype] = useState('Attack Type');
+    const [Dropout, updateDropout] = useState('Dropout');
 
     var path = `/${first}/${second}/${third}/`
 
@@ -19,7 +31,7 @@ export default function Navbar(props) {
     <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">{props.title}</a>
+                <a className="navbar-brand" href="/">{props.title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -27,7 +39,7 @@ export default function Navbar(props) {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        DataSet
+                        {Dataset}
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href="#" onClick={event => handleDataset(event, props.d1)}>{props.d1}</a></li>
@@ -36,7 +48,7 @@ export default function Navbar(props) {
                     </li>
                     <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Attack Type
+                        {Attacktype}
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href = "#" onClick={event => handleAttacktype(event, props.a1)}>{props.a1}</a></li>
@@ -46,7 +58,7 @@ export default function Navbar(props) {
                     </li>
                     <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropout
+                        {Dropout}
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href="#" onClick={event => handleDropout(event, props.dp1)}>{props.dp1}%</a></li>

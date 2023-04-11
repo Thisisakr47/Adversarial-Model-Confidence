@@ -11,9 +11,9 @@ export default function Panel(props) {
                         <b>Bad Images</b>
                     </div>
                 </div>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
+                <GridImages index={0}/>
+                <GridImages index={3}/>
+                <GridImages index={6}/>
             </div>
             <div className="container-fluid flex-wrap mt-5">
                 <div className="row justify-content-md-center text-center">
@@ -21,9 +21,9 @@ export default function Panel(props) {
                         <b>Good Images</b>
                     </div>
                 </div>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
-                <GridImages l1={props.path} l2={props.path} l3={props.path}/>
+                <GridImages index={9}/>
+                <GridImages index={12}/>
+                <GridImages index={15}/>
             </div>
         </div>
         <div className="container-fluid flex-column d-flex m-3 w-75">
