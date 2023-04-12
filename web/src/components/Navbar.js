@@ -34,7 +34,7 @@ export default function Navbar(props) {
     const [dropoutPath, updatedropoutPath] = useState('/MNIST/20/');
     const [realPath, updaterealPath] = useState('/MNIST/Left/0.png');
 
-    var path = `/${first}/${second}/${third}/${fourth}`
+    var path = `/${first}/${second}/${third}/${fourth}`;
 
   return (
     <div>

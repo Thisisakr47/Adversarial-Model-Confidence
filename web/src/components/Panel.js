@@ -12,9 +12,9 @@ export default function Panel(props) {
                         <b>Bad Images</b>
                     </div>
                 </div>
-                <GridImages index={9} update={props.update}/>
-                <GridImages index={12} update={props.update}/>
-                <GridImages index={15} update={props.update}/>
+                <GridImages index={0} type="bad" update={props.update}/>
+                <GridImages index={3} type="bad" update={props.update}/>
+                <GridImages index={6} type="bad" update={props.update}/>
             </div>
             <div className="d-flex justify-content-around" style={{border: "1px solid grey"}}></div>    
             <div className="container-fluid flex-wrap mt-1">
@@ -23,9 +23,9 @@ export default function Panel(props) {
                         <b>Good Images</b>
                     </div>
                 </div>
-                <GridImages index={0} update={props.update}/>
-                <GridImages index={3} update={props.update}/>
-                <GridImages index={6} update={props.update}/>
+                <GridImages index={0} type="good" update={props.update}/>
+                <GridImages index={3} type="good" update={props.update}/>
+                <GridImages index={6} type="good" update={props.update}/>
             </div>
         </div> 
         <div className="d-flex justify-content-around" style={{border: "2px solid grey", height: "70vh", marginTop: "12vh"}}></div>
@@ -36,16 +36,16 @@ export default function Panel(props) {
                 <CardImages body="Accuracy  vs  Confidence" path={props.dropoutPath+2+".png"} height="175"/>
             </div>
             <div className="container-fluid d-flex border border-1 justify-content-around text-center mt-1 pt-2 pb-2">
-                <CardImages body="Image1" path={props.path}/>
-                <CardImages body="Image2" path={props.path}/>
-                <CardImages body="Image3" path={props.path}/>
-                <CardImages body="Image4" path={props.path}/>
-                <CardImages body="Image5" path={props.path}/>
+                <CardImages body="Initial Image" path={props.path}/>
+                <CardImages body="Activation Layer 1" path={props.path.slice(0, -4) + "_1.png"}/>
+                <CardImages body="Activation Layer 2" path={props.path.slice(0, -4) + "_2.png"}/>
+                <CardImages body="Activation Layer 3" path={props.path.slice(0, -4) + "_3.png"}/>
+                <CardImages body="Activation Layer 4" path={props.path.slice(0, -4) + "_4.png"}/>
             </div>
             <div className="container-fluid d-flex border border-1 justify-content-around text-center pb-2 pt-2 mt-1">
                 <CardImages body="Real Image" path={props.realPath}/>
                 <CardImages body="Adversarial Image" path={props.path}/>
-                <CardImages body="Corr." path={props.path}/>
+                <CardImages body="C" valid="none" path={props.path}/>
             </div>
         </div>
     </div>

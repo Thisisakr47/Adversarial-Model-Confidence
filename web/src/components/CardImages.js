@@ -3,7 +3,7 @@ import React from 'react'
 export default function CardImages(props) {
   return (
     <div className="card border-0" >
-        <img src={require(`../images${props.path}`)} className="card-img-top" alt="Plots" height={props.height}/>
+        <img src={require(`../images${props.path}`)} style={{display: props.valid}} className="card-img-top" alt="Plots" height={props.height}/>
         {props.body}
     </div>
   )
@@ -12,5 +12,6 @@ export default function CardImages(props) {
 CardImages.defaultProps = {
     ind: '0',
     height: 150,
-    body: 'Enter Title Here'
+    body: 'Enter Title Here',
+    valid: "block"
 }
