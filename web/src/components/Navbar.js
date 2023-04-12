@@ -27,12 +27,12 @@ export default function Navbar(props) {
     const [first, updateFirst] = useState(props.d1);
     const [second, updateSecond] = useState(props.a1);
     const [third, updateThird] = useState(props.dp1);
-    const [fourth, updateFourth] = useState('0.png');
+    const [fourth, updateFourth] = useState('bad/0.png');
     const [Dataset, updateDataset] = useState('DataSet');
     const [Attacktype, updateAttacktype] = useState('Attack Type');
     const [Dropout, updateDropout] = useState('Dropout');
     const [dropoutPath, updatedropoutPath] = useState('/MNIST/20/');
-    const [realPath, updaterealPath] = useState('/MNIST/Left/0.png');
+    const [realPath, updaterealPath] = useState('/MNIST/Left/bad/0.png');
 
     var path = `/${first}/${second}/${third}/${fourth}`;
 

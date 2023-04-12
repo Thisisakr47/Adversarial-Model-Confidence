@@ -30,22 +30,22 @@ export default function Panel(props) {
         </div> 
         <div className="d-flex justify-content-around" style={{border: "2px solid grey", height: "70vh", marginTop: "12vh"}}></div>
         <div className="container-fluid flex-column d-flex m-3 w-75">
-            <div className="container-fluid d-flex border border-1  justify-content-around text-center pt-2 pb-2">
+            <div className="container-fluid d-flex border border-success border-1  justify-content-around text-center pt-2 pb-2">
                 <CardImages body="Confidence" path={props.dropoutPath+0+".png"} height="175"/>
                 <CardImages body="Accuracy" path={props.dropoutPath+1+".png"} height="175"/>
                 <CardImages body="Accuracy  vs  Confidence" path={props.dropoutPath+2+".png"} height="175"/>
             </div>
-            <div className="container-fluid d-flex border border-1 justify-content-around text-center mt-1 pt-2 pb-2">
+            <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center mt-1 pt-2 pb-2">
                 <CardImages body="Initial Image" path={props.path}/>
-                <CardImages body="Activation Layer 1" path={props.path.slice(0, -4) + "_1.png"}/>
-                <CardImages body="Activation Layer 2" path={props.path.slice(0, -4) + "_2.png"}/>
-                <CardImages body="Activation Layer 3" path={props.path.slice(0, -4) + "_3.png"}/>
-                <CardImages body="Activation Layer 4" path={props.path.slice(0, -4) + "_4.png"}/>
+                <CardImages body="Activation Layer 1" path={props.path.slice(0, -4) + "-1.png"}/>
+                <CardImages body="Activation Layer 2" path={props.path.slice(0, -4) + "-2.png"}/>
+                <CardImages body="Activation Layer 3" path={props.path.slice(0, -4) + "-3.png"}/>
+                <CardImages body="Activation Layer 4" path={props.path.slice(0, -4) + "-4.png"}/>
             </div>
-            <div className="container-fluid d-flex border border-1 justify-content-around text-center pb-2 pt-2 mt-1">
+            <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center pb-2 pt-2 mt-1">
                 <CardImages body="Real Image" path={props.realPath}/>
                 <CardImages body="Adversarial Image" path={props.path}/>
-                <CardImages body="C" valid="none" path={props.path}/>
+                <CardImages body="" valid="none" path={props.path}/>
             </div>
         </div>
     </div>
