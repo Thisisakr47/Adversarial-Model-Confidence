@@ -45,7 +45,7 @@ export default function Panel(props) {
             <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center pb-2 pt-2 mt-1">
                 <CardImages body="Real Image" path={props.realPath}/>
                 <CardImages body="Adversarial Image" path={props.path}/>
-                <CardImages body="" valid="none" path={props.path}/>
+                <CardImages align="end" body="" path={props.path.slice(0, -4) + "_" + props.path.slice(-5)}/>
             </div>
         </div>
     </div>
