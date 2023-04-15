@@ -3,6 +3,17 @@ import Panel from './Panel';
 
 export default function Navbar(props) {
 
+    const divs = [];
+
+    for (let i = 1; i <= 16; i++) {
+        divs.push(<li><a className="dropdown-item" href="#" onClick={event => updateIndex(event, i-1)}>{`Layer ${i}`}</a></li>);
+    }
+
+    const updateIndex = (event, param) => {
+        updateLayer(param);
+        updateActivationlayer(`Layer ${param+1}`);
+    }
+
     const handleDataset = (event, param) => { 
         updateFirst(param);
         updateDataset(param);
@@ -33,6 +44,8 @@ export default function Navbar(props) {
     const [Dropout, updateDropout] = useState('Dropout');
     const [dropoutPath, updatedropoutPath] = useState('/MNIST/20/');
     const [realPath, updaterealPath] = useState('/MNIST/Left/bad/0.png');
+    const [Layer, updateLayer] = useState(0);
+    const [Activationlayer, updateActivationlayer] = useState('Activation Layer');
 
     var path = `/${first}/${second}/${third}/${fourth}`;
 
@@ -75,6 +88,14 @@ export default function Navbar(props) {
                         <li><a className="dropdown-item" href="#" onClick={event => handleDropout(event, props.dp3)}>{props.dp3}%</a></li>
                     </ul>
                     </li>
+                    <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {Activationlayer}
+                    </a>
+                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {divs}
+                    </ul>
+                    </li>
                     {/* <li className="nav-item">
                         <Link className="nav-link" to="/about">About Us</Link>
                     </li> */}
@@ -82,7 +103,7 @@ export default function Navbar(props) {
                 </div>
             </div>
         </nav>
-        <Panel path={path} dropoutPath={dropoutPath} realPath={realPath} update={updatePath}/>
+        <Panel path={path} dropoutPath={dropoutPath} realPath={realPath} update={updatePath} layer={Layer}/>
     </div>
   )
 }

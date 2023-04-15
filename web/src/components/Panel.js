@@ -37,17 +37,19 @@ export default function Panel(props) {
             </div>
             <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center mt-1 pt-2 pb-2">
                 <CardImages body="Initial Image" path={props.path}/>
-                <CardImages body="Activation Layer 1" path={props.path.slice(0, -4) + "-1.png"}/>
-                <CardImages body="Activation Layer 2" path={props.path.slice(0, -4) + "-2.png"}/>
-                <CardImages body="Activation Layer 3" path={props.path.slice(0, -4) + "-3.png"}/>
-                <CardImages body="Activation Layer 4" path={props.path.slice(0, -4) + "-4.png"}/>
+                <CardImages body={`Activation Layer ${props.layer+1}`} path={props.path.slice(0, -4) + `-${props.layer}.png`}/>
+                <CardImages align="end" body="" path={props.path.slice(0, -4) + "_" + props.path.slice(-5).split('.')[0] + "_adver.png"}/>
             </div>
             <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center pb-2 pt-2 mt-1">
                 <CardImages body="Real Image" path={props.realPath}/>
-                <CardImages body="Adversarial Image" path={props.path}/>
-                <CardImages align="end" body="" path={props.path.slice(0, -4) + "_" + props.path.slice(-5)}/>
+                <CardImages body={`Activation Layer ${props.layer+1}`} path={props.realPath.slice(0, -4) + `-${props.layer}.png`}/>
+                <CardImages align="end" body="" path={props.path.slice(0, -4) + "_" + props.path.slice(-5).split('.')[0] + "__orig.png"}/>
             </div>
         </div>
     </div>
     )
+}
+
+Panel.defaultProps = {
+    layer: "0"
 }
