@@ -36,7 +36,7 @@ export default function Panel(props) {
                 <CardImages body="Accuracy  vs  Confidence" path={props.dropoutPath+2+".png"} height="175"/>
             </div>
             <div className="container-fluid d-flex border border-success border-1 justify-content-around text-center mt-1 pt-2 pb-2">
-                <CardImages body="Initial Image" path={props.path}/>
+                <CardImages body="Adversarial Image" path={props.path}/>
                 <CardImages body={`Activation Layer ${props.layer+1}`} path={props.path.slice(0, -4) + `-${props.layer}.png`}/>
                 <CardImages align="end" body="" path={props.path.slice(0, -4) + "_" + props.path.slice(-5).split('.')[0] + "_adver.png"}/>
             </div>
