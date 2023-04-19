@@ -21,7 +21,7 @@ export default function Navbar(props) {
 
     const handleAttacktype = (event, param) => { 
         updateSecond(param);
-        updateAttacktype(param);
+        updateAttacktype('IAA');
     }
 
     const handleDropout = (event, param) => { 
@@ -75,7 +75,7 @@ export default function Navbar(props) {
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href = "#" onClick={event => handleAttacktype(event, props.a1)}>{props.a1}</a></li>
                         <li><a className="dropdown-item" href="#" onClick={event => handleAttacktype(event, props.a2)}>{props.a2}</a></li>
-                        <li><a className="dropdown-item" href="#" onClick={event => handleAttacktype(event, props.a3)}>{props.a3}</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={event => handleAttacktype(event, 'State-of-art')}>{props.a3}</a></li>
                     </ul>
                     </li>
                     <li className="nav-item dropdown">
