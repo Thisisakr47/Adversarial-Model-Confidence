@@ -17,11 +17,16 @@ export default function Navbar(props) {
     const handleDataset = (event, param) => { 
         updateFirst(param);
         updateDataset(param);
+        updaterealPath(`/${param}/Left/bad/0.png`);   
+        updatedropoutPath(`/${param}/20/`);
+        updateThird('20');
+        updateFourth('bad/0.png');
     }
 
     const handleAttacktype = (event, param) => { 
         updateSecond(param);
-        updateAttacktype('IAA');
+        if(param === "State-of-art") { updateAttacktype('IAA'); }
+        else { updateAttacktype(param); }
     }
 
     const handleDropout = (event, param) => { 
@@ -103,7 +108,7 @@ export default function Navbar(props) {
                 </div>
             </div>
         </nav>
-        <Panel path={path} dropoutPath={dropoutPath} realPath={realPath} update={updatePath} layer={Layer}/>
+        <Panel dataset={first} path={path} dropoutPath={dropoutPath} realPath={realPath} update={updatePath} layer={Layer}/>
     </div>
   )
 }

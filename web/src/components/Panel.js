@@ -12,9 +12,9 @@ export default function Panel(props) {
                         <b>Bad Images</b>
                     </div>
                 </div>
-                <GridImages index={0} type="bad" update={props.update}/>
-                <GridImages index={3} type="bad" update={props.update}/>
-                <GridImages index={6} type="bad" update={props.update}/>
+                <GridImages index={0} type="bad" dataset={props.dataset} update={props.update}/>
+                <GridImages index={3} type="bad" dataset={props.dataset} update={props.update}/>
+                <GridImages index={6} type="bad" dataset={props.dataset} update={props.update}/>
             </div>
             <div className="d-flex justify-content-around" style={{border: "1px solid grey"}}></div>    
             <div className="container-fluid flex-wrap mt-1">
@@ -23,9 +23,9 @@ export default function Panel(props) {
                         <b>Good Images</b>
                     </div>
                 </div>
-                <GridImages index={0} type="good" update={props.update}/>
-                <GridImages index={3} type="good" update={props.update}/>
-                <GridImages index={6} type="good" update={props.update}/>
+                <GridImages index={0} type="good" dataset={props.dataset} update={props.update}/>
+                <GridImages index={3} type="good" dataset={props.dataset} update={props.update}/>
+                <GridImages index={6} type="good" dataset={props.dataset} update={props.update}/>
             </div>
         </div> 
         <div className="d-flex justify-content-around" style={{border: "2px solid grey", height: "70vh", marginTop: "12vh"}}></div>
